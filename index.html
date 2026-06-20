@@ -34,10 +34,12 @@ button.clear {
   margin-top: 10px;
 }
 
+/* 🔥 結果預設隱藏 */
 .result {
   background: #f5f5f5;
   padding: 10px;
   margin-top: 10px;
+  display: none;
 }
 </style>
 </head>
@@ -116,6 +118,9 @@ function calc() {
     <b>損益：${profit.toFixed(0)}</b><br>
     <b>投報率：${roi.toFixed(2)}%</b>
   `;
+
+  // 🔥 顯示結果
+  document.getElementById("result").style.display = "block";
 }
 
 // 清除輸入
@@ -124,7 +129,10 @@ function resetForm() {
   document.getElementById("buy").value = "";
   document.getElementById("sell").value = "";
   document.getElementById("qty").value = "";
+
+  // 清除結果
   document.getElementById("result").innerHTML = "";
+  document.getElementById("result").style.display = "none";
 }
 </script>
 
