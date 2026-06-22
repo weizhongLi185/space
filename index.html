@@ -53,10 +53,6 @@ button {
     width: 200px;
 }
 
-.discountInput {
-    width: 120px;
-}
-
 #result {
     margin-top: 20px;
     line-height: 1.6;
@@ -66,6 +62,29 @@ button {
     font-size: 24px;
     margin: 10px 0;
 }
+
+/* ✅ 數量那一排 */
+.row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+/* 📱 手機優化 */
+@media (max-width: 480px) {
+
+    .priceInput,
+    .qtyInput {
+        width: 100%;
+        max-width: 180px;
+    }
+
+    .row {
+        justify-content: flex-start;
+    }
+}
+
 </style>
 </head>
 
@@ -76,7 +95,6 @@ button {
 <h2>台股損益計算機</h2>
 
 <label>類型：</label>
-
 <select id="type">
     <option value="stock">股票</option>
     <option value="daytrade">當沖</option>
@@ -107,7 +125,7 @@ button {
 
 <br><br>
 
-<label style="margin-left:20px;">手續費折扣：</label>
+<label>手續費折扣：</label>
 <input type="number" id="discount" step="0.01" min="0.01" max="10" value="10" style="width:100px;">
 折
 
